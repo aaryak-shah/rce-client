@@ -14,12 +14,12 @@ const ModalBox = (props) => {
         <h2>CLOSE</h2>
       </button>
       <h2 className="modal-title">YOUR SESSION:</h2>
-      <div className="modal-current-session" is="current">
+      <div className="modal-current-session">
         <h3>Current session id is {userCode}</h3>
         <button
           className="nav-btn"
           onClick={() => {
-            document.querySelector('#curent').select()
+            document.querySelector('.modal-current-session').select()
             document.execCommand('copy')
           }}
         >
