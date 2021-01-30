@@ -5,14 +5,25 @@ const ModalBox = (props) => {
   const { userCode, setJoinedSessionCode } = props
   return (
     <div className='modal-box'>
-      <button
-        className='nav-btn'
-        onClick={() => {
-          document.getElementsByClassName('modal-bg')[0].id = 'hidden'
-        }}
-      >
-        <h2>CLOSE</h2>
-      </button>
+      <div className='modal-btn-bar'>
+        <button
+          className='nav-btn'
+          onClick={() => {
+            document.getElementsByClassName('modal-bg')[0].id = 'hidden'
+          }}
+        >
+          <h2>CLOSE</h2>
+        </button>
+        <button
+          className='nav-btn'
+          onClick={() => {
+            localStorage.clear()
+            window.location.reload()
+          }}
+        >
+          <h2>CLEAR DATA</h2>
+        </button>
+      </div>
       <h2 className='modal-title'>YOUR SESSION:</h2>
       <div className='modal-current-session'>
         <h3>Current session id is {userCode}</h3>
