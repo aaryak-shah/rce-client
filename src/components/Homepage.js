@@ -130,7 +130,7 @@ const Homepage = () => {
   // code run button handler
   const handlerun = () => {
     axios
-      .post('/code', {
+      .post('http://13.126.57.93/code', {
         key: userCode,
         language: modes[mode],
         input: input,

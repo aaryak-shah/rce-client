@@ -14,12 +14,13 @@ const ModalBox = (props) => {
         <h2>CLOSE</h2>
       </button>
       <h2 className="modal-title">YOUR SESSION:</h2>
-      <div className="modal-current-session">
+      <div className="modal-current-session" is="current">
         <h3>Current session id is {userCode}</h3>
         <button
           className="nav-btn"
           onClick={() => {
-            navigator.clipboard.writeText(userCode)
+            document.querySelector('#curent').select()
+            document.execCommand('copy')
           }}
         >
           <h3>(COPY)</h3>
