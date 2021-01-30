@@ -144,22 +144,22 @@ const Homepage = () => {
   // component return
   return (
     <>
-      <div className="modal-bg" id="hidden">
+      <div className='modal-bg' id='hidden'>
         <ModalBox
           userCode={userCode}
           setJoinedSessionCode={setJoinedSessionCode}
         />
       </div>
-      <div className="nav">
-        <h1 id="brand">
+      <div className='nav'>
+        <h1 id='brand'>
           {' '}
           &gt;codeBox{' '}
           {joinedSessionCode !== '' ? 'joined: ' + joinedSessionCode : ''}
         </h1>
-        <div id="navigation">
+        <div id='navigation'>
           {joinedSessionCode !== '' ? (
             <button
-              className="nav-btn"
+              className='nav-btn'
               onClick={() => {
                 socket.close()
                 setJoinedSessionCode('')
@@ -175,7 +175,7 @@ const Homepage = () => {
             <></>
           )}
           <button
-            className="nav-btn"
+            className='nav-btn'
             onClick={() => {
               document.getElementsByClassName('modal-bg')[0].id = ''
             }}
@@ -183,7 +183,7 @@ const Homepage = () => {
             <h2>session</h2>
           </button>
           <button
-            className="nav-btn"
+            className='nav-btn'
             onClick={() =>
               window.open(
                 'https://github.com/nafees87n/remote-code-executor/blob/main/docs/DOCS.md'
@@ -193,7 +193,7 @@ const Homepage = () => {
             <h2>docs</h2>
           </button>
           <button
-            className="nav-btn"
+            className='nav-btn'
             onClick={() =>
               window.open('https://github.com/nafees87n/remote-code-executor')
             }
@@ -202,14 +202,14 @@ const Homepage = () => {
           </button>
         </div>
       </div>
-      <div className="code-region">
-        <div id="code-header">
-          <h2 className="region-title">code</h2>
-          <h2 className="region-title-divider">|</h2>
+      <div className='code-region'>
+        <div id='code-header'>
+          <h2 className='region-title'>code</h2>
+          <h2 className='region-title-divider'>|</h2>
           {joinedSessionCode === '' ? (
             <>
               <select
-                id="language-select"
+                id='language-select'
                 defaultValue={mode}
                 value={mode}
                 onChange={modeHandle}
@@ -222,28 +222,28 @@ const Homepage = () => {
                   )
                 })}
               </select>
-              <h2 className="region-title-divider">|</h2>
-              <button id="run-btn" onClick={handlerun}>
+              <h2 className='region-title-divider'>|</h2>
+              <button id='run-btn' onClick={handlerun}>
                 RUN
               </button>{' '}
             </>
           ) : (
             <>
-              <h2 className="region-title">{mode}</h2>
+              <h2 className='region-title'>{mode}</h2>
             </>
           )}
         </div>
-        <div className="general-editor">
+        <div className='general-editor'>
           <AceEditor
             mode={mode}
-            theme="cobalt"
-            height="100%"
-            width="2fr"
+            theme='cobalt'
+            height='100%'
+            width='2fr'
             value={code}
             fontSize={18}
             showPrintMargin={false}
             onChange={(val) => setCode(val)}
-            name="code_editor"
+            name='code_editor'
             setOptions={{
               enableBasicAutocompletion: true,
               enableLiveAutocompletion: true,
@@ -251,47 +251,56 @@ const Homepage = () => {
             }}
             highlightActiveLine={joinedSessionCode === '' ? true : false}
             readOnly={joinedSessionCode === '' ? false : true}
+            setOptions={{
+              fontFamily: 'JetBrains Mono',
+            }}
           />
         </div>
       </div>
-      <div className="input-region">
-        <div id="code-header">
-          <h2 className="region-title">input</h2>
+      <div className='input-region'>
+        <div id='code-header'>
+          <h2 className='region-title'>input</h2>
         </div>
-        <div className="general-editor">
+        <div className='general-editor'>
           <AceEditor
-            mode="text"
-            theme="cobalt"
-            height="100%"
-            width="1fr"
+            mode='text'
+            theme='cobalt'
+            height='100%'
+            width='1fr'
             value={input}
-            name="input_editor"
+            name='input_editor'
             onChange={(val) => setInput(val)}
             fontSize={18}
             showPrintMargin={false}
             showGutter={false}
             highlightActiveLine={joinedSessionCode === '' ? true : false}
             readOnly={joinedSessionCode === '' ? false : true}
+            setOptions={{
+              fontFamily: 'JetBrains Mono',
+            }}
           />
         </div>
       </div>
-      <div className="output-region">
-        <div id="code-header">
-          <h2 className="region-title">output</h2>
+      <div className='output-region'>
+        <div id='code-header'>
+          <h2 className='region-title'>output</h2>
         </div>
-        <div className="general-editor">
+        <div className='general-editor'>
           <AceEditor
-            mode="text"
-            theme="cobalt"
-            height="100%"
-            width="1fr"
+            mode='text'
+            theme='cobalt'
+            height='100%'
+            width='1fr'
             value={output}
-            name="output_editor"
+            name='output_editor'
             fontSize={18}
             showPrintMargin={false}
             showGutter={false}
             highlightActiveLine={false}
             readOnly={true}
+            setOptions={{
+              fontFamily: 'JetBrains Mono',
+            }}
           />
         </div>
       </div>
