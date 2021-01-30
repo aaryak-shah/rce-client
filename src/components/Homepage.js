@@ -51,7 +51,7 @@ const Homepage = () => {
       setUserCode('')
       setJoinedSessionCode('')
       axios
-        .get('/code')
+        .get('http://13.126.57.93/code')
         .then(({ data }) => {
           setUserCode(data)
 
@@ -67,7 +67,7 @@ const Homepage = () => {
     }
     if (userCode === '') {
       axios
-        .get('/code')
+        .get('http://13.126.57.93/code')
         .then(({ data }) => {
           setUserCode(data)
 
