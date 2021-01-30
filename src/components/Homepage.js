@@ -43,6 +43,13 @@ const Homepage = () => {
   // non cached state vars
   const [output, setOutput] = useState('')
 
+  useEffect(() => {
+    document.onkeydown = (keyDownEvent) => {
+      if (keyDownEvent.altKey && keyDownEvent.key == 'F5')
+        document.getElementById('run-btn').click()
+    }
+  })
+
   // on load effect
   useEffect(() => {
     var now = new Date()
@@ -224,7 +231,7 @@ const Homepage = () => {
               </select>
               <h2 className='region-title-divider'>|</h2>
               <button id='run-btn' onClick={handlerun}>
-                RUN
+                RUN (ALT + F5)
               </button>{' '}
             </>
           ) : (
