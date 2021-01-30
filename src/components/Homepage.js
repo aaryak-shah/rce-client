@@ -193,7 +193,7 @@ const Homepage = () => {
             className='nav-btn'
             onClick={() =>
               window.open(
-                'https://github.com/nafees87n/remote-code-executor/blob/main/docs/DOCS.md'
+                'https://github.com/nafees87n/remote-code-executor/blob/main/docs/'
               )
             }
           >
